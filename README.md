@@ -1,4 +1,4 @@
-[Garage Door Controller v1.1](https://github.com/andrewshilliday/garage-door-controller)
+[Garage Door Controller](https://github.com/andrewshilliday/garage-door-controller)
 ======================
 
 Monitor and control your garage doors from the web via a Raspberry Pi.
@@ -22,7 +22,7 @@ Requirements:
 * [Raspberry Pi](http://www.raspberrypi.org)
 * Micro USB charger (1.5A preferable)
 * [USB WiFi dongle](http://amzn.com/B003MTTJOY) (If connecting wirelessly)
-* 8 GB micro SD Card
+* 8 GB SD Card
 * Relay Module, 1 channel per garage door (I used [SainSmart](http://amzn.com/B0057OC6D8 ), but there are [other options](http://amzn.com/B00DIMGFHY) as well)
 * [Magnetic Contact Switch](http://amzn.com/B006VK6YLC) (one per garage door)
 * [Female-to-Female jumper wires](http://amzn.com/B007XPSVMY) (you'll need around 10, or you can just solder)
@@ -55,8 +55,6 @@ The relays are used to mimic a push button being pressed which will in turn caus
 The following diagram illustrates how to wire up a two-door controller.  The program can accommodate fewer or additional garage doors (available GPIO pins permitting).
 
 ![enter image description here][5]
-
-Note: User [@lamping7](https://github.com/lamping7) has kindly informed me that my wiring schematic is not good.  He warns that the relay should not be powered directly off of the Raspberry Pi.  See his explanation and proposed solution [here](https://github.com/andrewshilliday/garage-door-controller/issues/16).  That being said, I've been running my Raspberry Pi according to the above schematic for years now and I haven't yet fried anything or set fire to my house.  Your milage may vary.
 
 Software Installation:
 -----
@@ -93,7 +91,6 @@ Software Installation:
     - **name**: The name for the garage door as it will appear on the controller app.
     - **relay_pin**: The GPIO pin connecting the RPi to the relay for that door.
     - **state_pin**: The GPIO pin conneting to the contact switch.
-    - **state_pin_closed_value**: The GPIO pin value (0 or 1) that indicates the door is closed. Defaults to 0.
     - **approx_time_to_close**: How long the garage door typically takes to close.
     - **approx_time_to_open**: How long the garage door typically takes to open.
 
@@ -118,8 +115,6 @@ This section contains the features I would like to add to the application, but d
 * *Security*: Impose a configurable password on the web service.  Would need to discuss the best strategy (i.e., should we require the pw every time, or can the session persist on any given device which has authenticated).
 * *New Feature*: Add a "close all" button to the bottom of the page to close all doors that have a state other than "closed" or "closing"
 * *Configuration*: Make the port number a configuration option
-* *Occupancy sensors*: Add proximity sensors to check if car port is in use
-* *IFTTT Integration*: make a smooth secure way to call the door and get information online
 
 
   [1]: http://i.imgur.com/rDx9YIt.png

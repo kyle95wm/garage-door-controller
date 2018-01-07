@@ -1,65 +1,66 @@
 {
-"config":
-{
-	"use_auth":true,
-	"use_alerts":true,
-	"use_openhab":false
-},
-"alerts":
-{
-	"time_to_wait" : 10,
-	"alert_type" : null,
-        "smtp":
-		{
-		"smtphost" : "<SMTP HOST>",
-		"smtpport" : 587,
-		"smtp_tls" : "True",
-		"username" : "<USERNAME EMAIL ADDRESS>",
-		"password" : "<PASSWORD>",
-		"to_email" : "<TO EMAIL ADDRESS>"
-		},
-	"pushbullet":
-		{
-		"access_token":"<ACCES TOKEN>"
-		},
-	"pushover":
-		{
-		"user_key":"<PUSHOVER USER KEY>",
-		"api_key":"<PUSHOVER API TOKEN/KEY>"
-		}
-},
-"openhab" :
-{
-	"server" : "",
-	"port" : ""
-},
+"smtp":
+	{
+	"smtphost" : "smtp.gmail.com",
+	"smtpport" : 587,
+	"smtp_tls" : "True",
+	"username" : "kyle95wm@gmail.com",
+	"password" : "obuonbwuybknbkhe",
+	"to_email" : "kyle95wm@gmail.com",
+	"time_to_wait" : 1800
+	},
 "site" :
 	{
-	"port":8081,
-	"username":"user",
-	"password":"12345"
+	"port":80,
+	"username":"admin",
+	"password":"admin"
 	},
 "doors" : 
 	{
 		"left" : 
-			{
-			"name" : "LEFT",
-			"relay_pin" : 23,
-			"state_pin" : 17,
-			"state_pin_closed_value" : 0,
-			"approx_time_to_close" : 15,
-			"approx_time_to_open" : 15,
-			"openhab_name" : "g_door_left"
-			},
+		       {
+		       "name" : "Accord Door",
+		       "relay_pin" : 17,
+		       "state_pin" : 5,
+		       "approx_time_to_close" : 10,
+		       "approx_time_to_open" : 13,
+		       "hold_relay" : 1.0
+		       },
 		"right" : 
 			{
-			"name" : "RIGHT",
-			"relay_pin" : 24,
-			"state_pin" : 21,
-			"state_pin_closed_value" : 0,
-			"approx_time_to_close" : 15,
-			"approx_time_to_open" : 15,
-			"openhab_name" : "g_door_right"
-			}
+			"name" : "Odyssey Door",
+			"relay_pin" : 22,
+			"state_pin" : 13,
+			"approx_time_to_close" : 10,
+			"approx_time_to_open" : 13,
+			"hold_relay" : 1.0
+			},
+                "middle" :
+                       {
+                       "name" : "Caravan Door",
+                       "relay_pin" : 27,
+                       "state_pin" : 6,
+                       "approx_time_to_close" : 10,
+                       "approx_time_to_open" : 13,
+		       "hold_relay" : 1.0
+                       },
+                "elev-down" :
+                       {
+                       "name" : "Elevator Down",
+                       "relay_pin" : 23,
+                       "state_pin" : 24,
+                       "approx_time_to_close" : 70,
+                       "approx_time_to_open" : 70,
+		       "hold_relay" : 80.0
+                       },
+                "elev-up" :
+                       {
+                       "name" : "Elevator Up",
+                       "relay_pin" : 12,
+                       "state_pin" : 16,
+                       "approx_time_to_close" : 70,
+                       "approx_time_to_open" : 70,
+		       "hold_relay" : 95.0
+                       }
 	}
 }
